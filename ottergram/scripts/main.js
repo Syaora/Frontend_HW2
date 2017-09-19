@@ -47,4 +47,27 @@ function initializeEvents() {
   thumbnails.forEach(addThumbClickHandler);
 }
 
+function randomTacoCat() {
+  'use strict';
+  var random = Math.floor(Math.random() * 5);
+  var thumbnails = getThumbsArray();
+  thumbnails[random].setAttribute('data-image-url', 'img/tacocat.jpg');
+}
+
+function resetUrl(thumb) {
+  'use strict';
+  var origin = thumb.getAttribute('href');
+  thumb.setAttribute('data-image-url', origin);
+}
+
+function foundMe(thumb) {
+  'use strict';
+  thumb.addEventListener('dblclick', function (event) {
+    event.preventDefault();
+    var thumbnails = getThumbsArray();
+    thumbnails.forEach(resetUrl;
+  });
+}
+
+randomTacoCat();
 initializeEvents();
