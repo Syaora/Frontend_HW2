@@ -52,6 +52,11 @@ function randomTacoCat() {
   var random = Math.floor(Math.random() * 5);
   var thumbnails = getThumbsArray();
   thumbnails[random].setAttribute('data-image-url', 'img/tacocat.jpg');
+  thumbnails[random].addEventListener('click', function (event) {
+    event.preventDefault();
+    thumbnails.forEach(resetUrl);
+    randomTacoCat();
+  });
 }
 
 function resetUrl(thumb) {
@@ -60,14 +65,6 @@ function resetUrl(thumb) {
   thumb.setAttribute('data-image-url', origin);
 }
 
-function foundMe(thumb) {
-  'use strict';
-  thumb.addEventListener('dblclick', function (event) {
-    event.preventDefault();
-    var thumbnails = getThumbsArray();
-    thumbnails.forEach(resetUrl;
-  });
-}
 
 randomTacoCat();
 initializeEvents();
